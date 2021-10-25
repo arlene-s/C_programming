@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=mode_midterm
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/mode_midterm
+CND_ARTIFACT_NAME_Debug=prob_3_mode
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/prob_3_mode
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=modemidterm.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/modemidterm.tar
+CND_PACKAGE_NAME_Debug=prob3mode.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/prob3mode.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=mode_midterm
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/mode_midterm
+CND_ARTIFACT_NAME_Release=prob_3_mode
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/prob_3_mode
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=modemidterm.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/modemidterm.tar
+CND_PACKAGE_NAME_Release=prob3mode.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/prob3mode.tar
 #
 # include compiler specific variables
 #

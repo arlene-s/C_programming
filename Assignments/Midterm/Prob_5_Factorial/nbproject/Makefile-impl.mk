@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Prob_3_Mode
+PROJECTNAME=Prob_5_Factorial
 
 # Active Configuration
 DEFAULTCONF=Debug

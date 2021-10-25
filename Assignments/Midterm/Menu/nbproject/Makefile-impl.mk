@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Menu_midterm
+PROJECTNAME=Menu
 
 # Active Configuration
 DEFAULTCONF=Debug

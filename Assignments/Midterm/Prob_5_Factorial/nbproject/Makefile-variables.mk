@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=menu
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/menu
+CND_ARTIFACT_NAME_Debug=prob_5_factorial
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/prob_5_factorial
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=menu.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/menu.tar
+CND_PACKAGE_NAME_Debug=prob5factorial.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/prob5factorial.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=menu
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/menu
+CND_ARTIFACT_NAME_Release=prob_5_factorial
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/prob_5_factorial
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=menu.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/menu.tar
+CND_PACKAGE_NAME_Release=prob5factorial.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/prob5factorial.tar
 #
 # include compiler specific variables
 #

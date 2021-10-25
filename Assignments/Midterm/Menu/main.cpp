@@ -12,8 +12,6 @@ using namespace std;
 //User Libraries
 #include "Customr.h"    //Customer bank info struct
 #include "EmpInfo.h"
-#include "Array.h"
-#include "Stats.h"
 //Global Constants - Math/Physics Constants, Conversions,
 //                   2-D Array Dimensions
 
@@ -21,7 +19,7 @@ using namespace std;
 void menu();
 void prblm1();
 void prblm2();
-void prblm3();
+void prblm5();
 void prblm6();
 Customr *getDat(int &,int &);     //fill with customer info and return struct
 void calcBal(Customr *,int,int);  //calculate the new balance
@@ -30,18 +28,11 @@ void destroy(Customr *);
 void getDat(EmpInfo &);           //Grabs input
 float calcPay(EmpInfo &);         //Calculates gross pay
 void print(EmpInfo);              //Print check
-Array *fillAry(int,int);          //Fill an array and put into a structure
-void prntAry(const Array *,int);  //Print the array 
-int *copy(const int *,int);       //Copy the array
-void mrkSort(int *,int);          //Sort an array
-void prtStat(const Stats *);      //Print the structure
-void rcvrMem(Array *);            //Recover memory from the Array Structure
-void rcvrMem(Stats *);            //Recover memory from Statistics Structure
-Stats *stat(const Array *);       //Find & store mean, median, & modes in structure
 //Execution Begins Here
 int main(int argc, char** argv) {
     //Declare Variables
     char choice;
+    bool quit=false;
     
     //Loop and Display menu
     do{
@@ -52,11 +43,11 @@ int main(int argc, char** argv) {
         switch(choice){
             case '1':{prblm1();break;}
             case '2':{prblm2();break;}
-            case '3':{prblm3();break;}
-            case '4':{prblm6();break;}
-            default: cout<<"Exiting Menu"<<endl;
+            case '5':{prblm5();break;}
+            case '6':{prblm6();break;}
+            default: {quit=true;cout<<"Exiting Menu"<<endl;}
         }
-    }while(choice>='1'&&choice<='4');
+    }while(quit==false);
     
     //Exit stage right!
     return 0;
@@ -69,8 +60,8 @@ void menu(){
     cout<<endl<<"Choose from the following Menu"<<endl;
     cout<<"Type 1 for Problem 1"<<endl;
     cout<<"Type 2 for Problem 2"<<endl;
-    cout<<"Type 3 for Problem 3"<<endl;   
-    cout<<"Type 4 for Problem 6"<<endl<<endl;
+    cout<<"Type 5 for Problem 5"<<endl;
+    cout<<"Type 6 for Problem 6"<<endl<<endl;
 }
 
 //                         Problem 1
@@ -111,47 +102,26 @@ void prblm2(){
     delete []array;
 }
 
-//                         Problem 3
-//Description: Mode Problem, modify stats function to find modes, frequency, 
-//             median, and average
-void prblm3(){
-    cout<<"Problem 3"<<endl;
-    //Declare variables
-    int arySize;//Array Size
-    int modNum; //Number to control the modes (digits 0 to 9 allowed)
-    Array *array;
-    
-    //Input the size and mod number
-    cout<<"This program develops an array to be analyzed"<<endl;
-    cout<<"Array size from mod number to 100"<<endl;
-    cout<<"Mod number from 2 to 10"<<endl;
-    cout<<"Input the Array Size and the mod number to be used."<<endl;
-    cin>>arySize>>modNum;
-    cout<<endl<<endl;
-    
-    //Fill the array
-    array=fillAry(arySize,modNum);
-    
-    //Print the initial array
-    cout<<"Original Array before sorting"<<endl;
-    prntAry(array,10);
-    
-    //Sort the array
-    mrkSort(array->data,array->size);
-    cout<<"Sorted Array to be utilize for the stat function"<<endl;
-    prntAry(array,10);
-    
-    //Calculate some of the statistics
-    Stats *stats=stat(array);
-    
-    //Print the statistics
-    prtStat(stats);
-    //Recover allocated memory
-    rcvrMem(array);
-    rcvrMem(stats);
+//                          Problem 5
+//Description: Displays results of the largest n where n!=factorial
+void prblm5(){
+    cout<<"Problem 5"<<endl;
+    //Display the results
+    cout<<"Largest n for all signed and unsigned primitive data types"<<endl;
+    cout<<"____________________________________________"<<endl;
+    cout<<setw(21)<<"n"<<endl
+        <<setw(19)<<"Signed"<<setw(11)<<"Unsigned"<<left<<endl
+        <<setw(15)<<"char"<<setw(10)<<"5"<<"5"<<endl
+        <<setw(15)<<"short"<<setw(10)<<"7"<<"8"<<endl
+        <<setw(15)<<"int"<<setw(10)<<"12"<<"12"<<endl
+        <<setw(15)<<"long"<<setw(10)<<"20"<<"20"<<endl
+        <<setw(15)<<"long long"<<setw(10)<<"20"<<"20"<<endl
+        <<setw(15)<<"float"<<setw(10)<<"34"<<" "<<endl
+        <<setw(15)<<"double"<<setw(10)<<"170"<<" "<<endl
+        <<setw(15)<<"long double"<<setw(10)<<"1754"<<" "<<endl;
 }
 
-//                         Problem 4
+//                         Problem 6
 //Description: cout function for NASA format conversion problem
 //Displays results
 void prblm6(){
@@ -236,7 +206,7 @@ Customr *getDat(int &chcks, int &dpsits){
     
     return record;
 }
-
+//Prob 1 functions
 void calcBal(Customr *record, int chcks, int dpsits){
     float newBal=record->begBal;    //Initialize new balance to beginning balance
     
@@ -269,13 +239,13 @@ void print(Customr *record, int chcks, int dpsits){
         cout<<"$"<<record->dposits[i]<<" ";
 }
 
-//Prob 2
+//Prob 2 functions
 void print(EmpInfo ary){ 
     cout<<endl<<ary.address<<endl;
     cout<<"Pay to the"<<endl
         <<left<<setw(12)<<"Order of "<<setw(18)<<ary.name<<"$"<<ary.grosPay<<endl;
     //Convert the amount into english words
-    int whleNum=ary.grosPay;   //Whole number
+    int whleNum=ary.grosPay;   //Whole numberS
     if(ary.grosPay>=1 && ary.grosPay<=5000){
         unsigned char n1000s,n100s,n10s,n1s;
         n1000s=whleNum/1000;   //Shift 3 places to the left
@@ -292,7 +262,7 @@ void print(EmpInfo ary){
         }
         cout<<(n100s==9?"Nine hundred ":
                n100s==8?"Eight hundred ":
-               n100s==7?"Nine hundred ":
+               n100s==7?"Seven hundred ":
                n100s==6?"Six hundred ":
                n100s==5?"Five hundred ":
                n100s==4?"Four Hundred ":
@@ -364,129 +334,3 @@ void getDat(EmpInfo &ary){
     cin>>ary.payRate;
     ary.grosPay=calcPay(ary);
 }
-
-int *copy(const int *a,int n){
-    //Declare and allocate an array
-    //that is a c
-    int *b=new int[n];
-    //Fill
-    for(int i=0;i<n;i++){
-        b[i]=a[i];
-    }
-    //Return the copy
-    return b;
-}
-
-void prtStat(const Stats *ary){
-    cout<<endl;
-    cout<<"The average of the array = "<<ary->avg<<endl;
-    cout<<"The median of the array  = "<<ary->median<<endl;
-    cout<<"The number of modes      = "<<
-            ary->mode->size<<endl;
-    cout<<"The max Frequency        = "<<
-            ary->modFreq<<endl;
-    if(ary->mode->size==0){
-        cout<<"The mode set             = {null}"<<endl;
-        return;
-    }
-    cout<<"The mode set             = {";
-    for(int i=0;i<ary->mode->size-1;i++){
-        cout<<ary->mode->data[i]<<",";
-    }
-    cout<<ary->mode->data[ary->mode->size-1]<<"}"<<endl;
-}
-
-void mrkSort(int *array,int n){
-    for(int i=0;i<n-1;i++){
-        for(int j=i+1;j<n;j++){
-            if(array[j]<array[i]){
-                int temp=array[i];
-                array[i]=array[j];
-                array[j]=temp;
-            }
-        }
-    }
-}
-
-void rcvrMem(Stats *stats){
-    rcvrMem(stats->mode);
-    delete stats;
-}
-
-void rcvrMem(Array *array){
-    delete []array->data;
-    delete array;
-}
-
-void prntAry(const Array *array,int perLine){
-    //Output the array
-    for(int i=0;i<array->size;i++){
-        cout<<array->data[i]<<" ";
-        if(i%perLine==(perLine-1))cout<<endl;
-    }
-    cout<<endl;
-}
-
-Array *fillAry(int n, int modNum){
-    //Allocate memory
-    Array *array=new Array;
-    array->size=n;
-    array->data=new int[array->size];
-    
-    //Fill the array with mod numbers
-    for(int i=0;i<n;i++){
-        array->data[i]=i%modNum;
-    }
-    
-    //Exit function
-    return array;
-}
-
-Stats *stat(const Array *array){
-    //Non-working stub to be completed by the student
-    cout<<endl<<"Stat function to be completed by the student"<<endl;
-    Stats *stats=new Stats;
-    stats->mode=new Array;
-    stats->mode->size=0;
-    int sum=0, compCnt=0, maxCnt=0, freq=0, nModes=0, index=0;
-    
-    //Calculate average
-    for(int i=0; i<array->size;i++)
-        sum+=array->data[i];            //Take the sum of the elements
-    stats->avg=1.0f*sum/array->size;
-    //Calculate median
-    if(array->size%2==0)
-        stats->median=(array->data[(array->size-1)/2]+array->data[(array->size)/2])/2.0f;
-    else
-        stats->median=array->data[array->size/2];
-    
-    //Calculate frequency and number of modes
-    for(int i=0;i<array->size-1;i++){
-        if(array->data[i]==array->data[i+1]){
-            compCnt++;              //comparison count, increment when neighbor is equal
-            if(compCnt>maxCnt){      
-                maxCnt=compCnt;     //Store the max count
-            }
-            if(compCnt==maxCnt)     //Increment number of modes when max count reached
-               nModes++;
-        }else
-            compCnt=0;              //Set compCnt back to 0 when neighbors aren't equal
-    }
-    stats->modFreq=maxCnt+1;
-    if(nModes!=0){                  //If number of modes is 1 or greater
-        stats->mode->size=nModes;   //Set mode size;
-        stats->mode->data=new int[nModes]; //allocate memory to pointer
-        for(int i=0; i<array->size-1; i++){
-            if(array->data[i]==array->data[i+1]){
-                compCnt++;
-                if(compCnt==maxCnt){    //Store all values with the max count
-                stats->mode->data[index]=array->data[i];
-                index++;
-                }
-            }else
-                compCnt=0;
-        }
-    }
-    return stats;
-}
-

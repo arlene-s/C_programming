@@ -161,19 +161,25 @@ Stats *stat(const Array *array){
     else
         stats->median=array->data[array->size/2];
     
-    //Calculate frequency and number of modes
+    //Find frequency
     for(int i=0;i<array->size-1;i++){
         if(array->data[i]==array->data[i+1]){
             compCnt++;              //comparison count, increment when neighbor is equal
-            if(compCnt>maxCnt){      
-                maxCnt=compCnt;     //Store the max count
-            }
-            if(compCnt==maxCnt)     //Increment number of modes when max count reached
-               nModes++;
+            maxCnt=compCnt>maxCnt?compCnt:maxCnt;   //Update max count
+        }else{
+            compCnt=0;              //Set compCnt back to 0 when neighbors aren't equal
+        }
+    }
+    stats->modFreq=maxCnt+1;
+    //Find number of modes
+    for(int i=0;i<array->size-1;i++){
+        if(array->data[i]==array->data[i+1]){
+            compCnt++;              //comparison count, increment when neighbor is equal
+            if(compCnt==maxCnt)nModes++;
         }else
             compCnt=0;              //Set compCnt back to 0 when neighbors aren't equal
     }
-    stats->modFreq=maxCnt+1;
+    //Fill mode array
     if(nModes!=0){                  //If number of modes is 1 or greater
         stats->mode->size=nModes;   //Set mode size;
         stats->mode->data=new int[nModes]; //allocate memory to pointer
