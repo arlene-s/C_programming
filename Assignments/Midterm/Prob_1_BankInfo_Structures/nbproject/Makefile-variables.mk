@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=prob_1
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/prob_1
+CND_ARTIFACT_NAME_Debug=prob_1_bankinfo_structures
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/prob_1_bankinfo_structures
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=prob1.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/prob1.tar
+CND_PACKAGE_NAME_Debug=prob1bankinfostructures.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/prob1bankinfostructures.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=prob_1
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/prob_1
+CND_ARTIFACT_NAME_Release=prob_1_bankinfo_structures
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/prob_1_bankinfo_structures
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=prob1.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/prob1.tar
+CND_PACKAGE_NAME_Release=prob1bankinfostructures.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/prob1bankinfostructures.tar
 #
 # include compiler specific variables
 #

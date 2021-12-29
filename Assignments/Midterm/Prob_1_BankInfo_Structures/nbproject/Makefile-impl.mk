@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Prob_1
+PROJECTNAME=Prob_1_BankInfo_Structures
 
 # Active Configuration
 DEFAULTCONF=Debug
